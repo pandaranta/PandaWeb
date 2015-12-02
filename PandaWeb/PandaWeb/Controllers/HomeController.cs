@@ -22,7 +22,7 @@ namespace PandaWeb.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your contact page with text.";
 
             return View();
         }
