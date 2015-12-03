@@ -16,13 +16,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+<<<<<<< HEAD
+                @Html.ActionLink("Team Panda", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+=======
                 @Html.ActionLink("Panda", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+>>>>>>> refs/remotes/origin/Linus1
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("PandaUtbildningsplan", "EducationPlan", "Home")</li>
+                    <li>@Html.ActionLink("PandaAbout", "About", "Home")</li>
+                    <li>@Html.ActionLink("PandaContact", "Contact", "Home")</li>
                 </ul>
             </div>
         </div>
@@ -31,7 +35,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - PandaWeb </p>
         </footer>
     </div>
 

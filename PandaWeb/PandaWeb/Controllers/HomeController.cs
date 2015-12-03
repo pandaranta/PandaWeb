@@ -26,5 +26,12 @@ namespace PandaWeb.Controllers
 
             return View();
         }
+
+        public ActionResult EducationPlan()
+        {
+            ViewBag.Message = "Utbildningsplan";
+
+            return View();
+        }
     }
 }
