@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PandaWeb.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -30,8 +31,14 @@ namespace PandaWeb.Controllers
         public ActionResult EducationPlan()
         {
             ViewBag.Message = "Utbildningsplan";
-
-            return View();
+            var id = 1;
+            var name = "Systemutveckling";
+            var courses = new List<string> { "kurs 1", "kurs 2", "kurs 3" };
+            var startDate = new DateTime(2014, 08, 01);
+            var endDate = new DateTime(2016, 10, 30);
+            var type = "På plats";
+            EducationPlan eduPlan = new EducationPlan(id, name, courses, startDate, endDate, type);
+            return View(eduPlan);
         }
     }
 }
