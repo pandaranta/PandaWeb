@@ -31,13 +31,13 @@ namespace PandaWeb.Controllers
         public ActionResult EducationPlan()
         {
             ViewBag.Message = "Utbildningsplan";
-            EducationPlan eduPlan = new EducationPlan();
-            eduPlan.ID = 1;
-            eduPlan.Name = "Systemutveckling";
-            eduPlan.StartDate = new DateTime(2014, 08, 01);
-            eduPlan.EndDate = new DateTime(2016, 10, 30);
-            eduPlan.Courses = new List<string> { "Kurs 1", "Kurs 2", "Kurs 3" };
-            eduPlan.TypeOfEducation = "På plats";
+            var id = 1;
+            var name = "Systemutveckling";
+            var courses = new List<string> { "kurs 1", "kurs 2", "kurs 3" };
+            var startDate = new DateTime(2014, 08, 01);
+            var endDate = new DateTime(2016, 10, 30);
+            var type = "På plats";
+            EducationPlan eduPlan = new EducationPlan(id, name, courses, startDate, endDate, type);
             return View(eduPlan);
         }
     }
