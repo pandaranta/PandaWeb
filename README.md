@@ -1,2 +1,0 @@
-# PandaWeb
-Slow but steady
