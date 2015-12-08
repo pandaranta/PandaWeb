@@ -23,7 +23,13 @@ namespace PandaWeb.Controllers
 
         public ActionResult EducationPlan()
         {
+            //så småningom hämtas från en databas
             ViewBag.Message = "Utbildningsplan";
+            return View();
+        }
+
+        public ActionResult Course()
+        {
             return View();
         }
     }
