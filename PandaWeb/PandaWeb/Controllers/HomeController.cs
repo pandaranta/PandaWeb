@@ -30,7 +30,6 @@ namespace PandaWeb.Controllers
 
         public ActionResult EducationPlan()
         {
-            Console.WriteLine();
             ViewBag.Message = "Utbildningsplan";
             var id = 1;
             var name = "Systemutveckling";
