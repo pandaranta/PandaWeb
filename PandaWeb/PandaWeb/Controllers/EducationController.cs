@@ -7,24 +7,23 @@ using System.Web.Mvc;
 
 namespace PandaWeb.Controllers
 {
-    public class HomeController : Controller
+    public class EducationController : Controller
     {
-        public ActionResult Index()
+        // GET: Education
+        public ActionResult UP()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult LG()
         {
-            ViewBag.Message = "Your application description page.";
-
+            //ActionResult för LG-Information
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult EducationPlan()
         {
-            ViewBag.Message = "Your contact page with text.";
-
+            ViewBag.Message = "Utbildningsplan";
             return View();
         }
     }
