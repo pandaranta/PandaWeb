@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<PandaWeb.Models.EducationPlan>
 
 @{
-    ViewBag.Title = "EducationPlan";
+    ViewBag.Title = "Systemutveckling";
     Layout = "~/Views/Shared/_LayoutEducation.cshtml";
 }
 
-<h2>EducationPlan</h2>
+<h2>Systemutveckling</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+  
 </p>
 <table class="table">
     <tr>
@@ -33,7 +33,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.Encode(item.Name)
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StartDate)
@@ -56,3 +56,9 @@
 }
 
 </table>
+<h2>
+    Välkommen till denna utbildning!
+</h2>
+<p>
+    Meddelande om denna utbildning
+</p>

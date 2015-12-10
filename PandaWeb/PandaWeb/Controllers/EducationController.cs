@@ -22,25 +22,38 @@ namespace PandaWeb.Controllers
             return View();
         }
 
-        public ActionResult EducationPlan()
+        public ActionResult Backendutveckling()
         {
-            var eduPlan = new EducationPlan();
-            eduPlan.Name = "Backendutveckling";
-            eduPlan.EducationId = 2;
-            eduPlan.StartDate =
-                new DateTime(2015, 01, 01);
-            eduPlan.EndDate = new DateTime(2016, 12, 30);
+            //var eduPlan = new EducationPlan();
+            //eduPlan.Name = "Backendutveckling";
+            //eduPlan.EducationId = 2;
+            //eduPlan.StartDate =
+            //    new DateTime(2015, 01, 01);
+            //eduPlan.EndDate = new DateTime(2016, 12, 30);
 
-            context.EducationPlans.Add(eduPlan);
-            context.SaveChanges();
-            context.Database.Connection.Close();
-
-            context.Database.Connection.Open();
-            var trying = from e in context.EducationPlans
-                         orderby e.Name
+            //context.EducationPlans.Add(eduPlan);
+            //context.SaveChanges();
+            var backendutveckling = from e in context.EducationPlans
+                         where e.EducationId==2
                          select e;
-            context.Database.Connection.Close();
-            return View(trying);
+            return View(backendutveckling);
+        }
+
+        public ActionResult Systemutveckling()
+        {
+            //var eduPlan = new EducationPlan();
+            //eduPlan.Name = "Systemutveckling";
+            //eduPlan.EducationId = 3;
+            //eduPlan.StartDate =
+            //    new DateTime(2015, 01, 01);
+            //eduPlan.EndDate = new DateTime(2016, 12, 30);
+
+            //context.EducationPlans.Add(eduPlan);
+            //context.SaveChanges();
+            var sys  = from e in context.EducationPlans
+                       where e.EducationId == 3
+                       select e;
+            return View(sys);
         }
 
         public ActionResult Course()

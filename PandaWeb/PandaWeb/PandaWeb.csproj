@@ -200,7 +200,8 @@
     <Content Include="Views\Shared\_LayoutEducation.cshtml" />
     <Content Include="Views\Education\UP.cshtml" />
     <Content Include="Views\Education\Course.cshtml" />
-    <Content Include="Views\Education\EducationPlan.cshtml" />
+    <Content Include="Views\Education\Backendutveckling.cshtml" />
+    <Content Include="Views\Education\Systemutveckling.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
