@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\EducationPlan.cs" />
+    <Compile Include="Models\MyDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -195,10 +196,10 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Education\LG.cshtml" />
-    <Content Include="Views\Education\EducationPlan.cshtml" />
     <Content Include="Views\Shared\_LayoutEducation.cshtml" />
     <Content Include="Views\Education\UP.cshtml" />
     <Content Include="Views\Education\Course.cshtml" />
+    <Content Include="Views\Education\EducationPlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

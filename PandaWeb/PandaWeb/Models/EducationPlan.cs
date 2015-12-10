@@ -9,18 +9,8 @@ namespace PandaWeb.Models
 {
     public class EducationPlan
     {
-        public EducationPlan(int id, string name, List<string> courses, DateTime startDate, DateTime endDate, string typeOfEducation)
-        {
-            ID = id;
-            Name = name;
-            Courses = courses;
-            StartDate = startDate;
-            EndDate = endDate;
-            TypeOfEducation = typeOfEducation;
-
-        }
-        
-        public int ID { get; set; }
+        [Key]
+        public int EducationId { get; set; }
         public string Name { get; set; }
         public List<String> Courses { get; set; }
 
@@ -29,6 +19,7 @@ namespace PandaWeb.Models
 
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
         public DateTime EndDate { get; set; }
-        public string TypeOfEducation { get; set; }
+        public string PaceOfStudy { get; set; }
+        public string FormOfStudy { get; set; }
     }
 }

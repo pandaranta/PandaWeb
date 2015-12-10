@@ -9,6 +9,7 @@ namespace PandaWeb.Controllers
 {
     public class EducationController : Controller
     {
+        MyDBContext context = new MyDBContext();
         // GET: Education
         public ActionResult UP()
         {
@@ -23,9 +24,10 @@ namespace PandaWeb.Controllers
 
         public ActionResult EducationPlan()
         {
-            //så småningom hämtas från en databas
-            ViewBag.Message = "Utbildningsplan";
-            return View();
+            var trying = from e in context.EducationPlans
+                         orderby e.Name
+                         select e;
+            return View(trying);
         }
 
         public ActionResult Course()
