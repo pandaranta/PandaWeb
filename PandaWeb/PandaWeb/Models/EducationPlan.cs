@@ -12,7 +12,6 @@ namespace PandaWeb.Models
         [Key]
         public int EducationId { get; set; }
         public string Name { get; set; }
-        public List<String> Courses { get; set; }
 
         [DisplayFormat(DataFormatString="{0:yyyy/MM/dd}")]
         public DateTime StartDate { get; set; }
@@ -21,5 +20,11 @@ namespace PandaWeb.Models
         public DateTime EndDate { get; set; }
         public string PaceOfStudy { get; set; }
         public string FormOfStudy { get; set; }
+
+        //länktabell till UL-tabellen
+        public virtual UL UL { get; set; }
+
+        //länktabell till kurser
+        public virtual ICollection<Course> Courses { get; set; }
     }
 }

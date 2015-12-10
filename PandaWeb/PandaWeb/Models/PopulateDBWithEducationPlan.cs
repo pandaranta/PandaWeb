@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -7,11 +8,14 @@ namespace PandaWeb.Models
 {
     public class PopulateDBWithEducationPlan
     {
+        
+
         MyDBContext context = new MyDBContext();
         public PopulateDBWithEducationPlan()
         {
-            CreateBackendutveckling();
-            CreateSystemutveckling();
+            //CreateBackendutveckling();
+            //CreateSystemutveckling();
+            CreateCourseOne();
         }
         public void CreateBackendutveckling()
         {
@@ -45,6 +49,18 @@ namespace PandaWeb.Models
             eduPlan.EndDate = new DateTime(2016, 12, 30);
 
             context.EducationPlans.Add(eduPlan);
+            context.SaveChanges();
+        }
+
+
+        public void CreateCourseOne()
+        {
+            //Database.SetInitializer(new DropCreateDatabaseAlways<MyDBContext>());
+            Course course = new Course();
+            course.Name = "OO1";
+            course.EducationPlanId = 2;
+
+            context.Course.Add(course);
             context.SaveChanges();
         }
     }

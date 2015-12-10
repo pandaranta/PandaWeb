@@ -15,7 +15,8 @@ namespace PandaWeb.Controllers
         //och du måste trycka på endast!! en av länkarna i HomeControllern för utbildnignarna, 
         //därefter stänga och köra om, men
         //med nedan rad bortkommenterad!!
-        //PopulateDBWithEducationPlan fillDB = new PopulateDBWithEducationPlan();
+        PopulateDBWithEducationPlan fillDB = new PopulateDBWithEducationPlan();
+        //I mappen Global.asax.cs kommentera bort Database.SetInitializer
 
         // GET: Education
         public ActionResult UP()
@@ -48,17 +49,9 @@ namespace PandaWeb.Controllers
 
         public ActionResult Course()
         {
+            Course course = new Course();
+            context.Course.Add(course);
             return View();
-        }
-
-        public ActionResult DropDownList()
-        {
-            List<SelectListItem> li = new List<SelectListItem>();
-            li.Add(new SelectListItem { Text = "Jemma", Value = "0" });
-            li.Add(new SelectListItem { Text = "Peter", Value = "1" });
-            li.Add(new SelectListItem { Text = "Joel", Value = "2" });
-            ViewData["Name"] = li;
-            return View(li);
         }
     }
 }
