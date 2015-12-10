@@ -10,6 +10,13 @@ namespace PandaWeb.Controllers
     public class EducationController : Controller
     {
         MyDBContext context = new MyDBContext();
+
+        //Första gången du kör koden, så måste du instansiera upp PopulateDBWithEducationPlan
+        //och du måste trycka på endast!! en av länkarna i HomeControllern för utbildnignarna, 
+        //därefter stänga och köra om, men
+        //med nedan rad bortkommenterad!!
+        //PopulateDBWithEducationPlan fillDB = new PopulateDBWithEducationPlan();
+
         // GET: Education
         public ActionResult UP()
         {
@@ -24,15 +31,7 @@ namespace PandaWeb.Controllers
 
         public ActionResult Backendutveckling()
         {
-            //var eduPlan = new EducationPlan();
-            //eduPlan.Name = "Backendutveckling";
-            //eduPlan.EducationId = 2;
-            //eduPlan.StartDate =
-            //    new DateTime(2015, 01, 01);
-            //eduPlan.EndDate = new DateTime(2016, 12, 30);
-
-            //context.EducationPlans.Add(eduPlan);
-            //context.SaveChanges();
+            
             var backendutveckling = from e in context.EducationPlans
                          where e.Name=="Backendutveckling"
                          select e;
@@ -40,20 +39,11 @@ namespace PandaWeb.Controllers
         }
 
         public ActionResult Systemutveckling()
-        {
-            //var eduPlan = new EducationPlan();
-            //eduPlan.Name = "Systemutveckling";
-            //eduPlan.EducationId = 3;
-            //eduPlan.StartDate =
-            //    new DateTime(2015, 01, 01);
-            //eduPlan.EndDate = new DateTime(2016, 12, 30);
-
-            //context.EducationPlans.Add(eduPlan);
-            //context.SaveChanges();
-            var sys  = from e in context.EducationPlans
+        {       
+            var systemutveckling  = from e in context.EducationPlans
                        where e.Name=="Systemutveckling"
                        select e;
-            return View(sys);
+            return View(systemutveckling);
         }
 
         public ActionResult Course()
