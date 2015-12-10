@@ -50,5 +50,15 @@ namespace PandaWeb.Controllers
         {
             return View();
         }
+
+        public ActionResult DropDownList()
+        {
+            List<SelectListItem> li = new List<SelectListItem>();
+            li.Add(new SelectListItem { Text = "Jemma", Value = "0" });
+            li.Add(new SelectListItem { Text = "Peter", Value = "1" });
+            li.Add(new SelectListItem { Text = "Joel", Value = "2" });
+            ViewData["Name"] = li;
+            return View(li);
+        }
     }
 }
