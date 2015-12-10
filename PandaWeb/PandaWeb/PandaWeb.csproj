@@ -162,6 +162,7 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\EducationPlan.cs" />
     <Compile Include="Models\MyDBContext.cs" />
+    <Compile Include="Models\PopulateDBWithEducationPlan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
