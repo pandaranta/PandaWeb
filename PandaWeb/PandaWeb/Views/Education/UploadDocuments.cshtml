@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "UploadDocuments";
+    Layout = "~/Views/Shared/_LayoutEducation.cshtml";
+}
+
+<h2>Kursmaterial</h2>
+<p>Här kan du ladda upp material</p>
+
+@Html.BeginForm("Save", "Education", FormMethod.Post, new { enctype ="multipart/form-data"})
+{
+<table name="documents">
+    <tr>
+        <td>File:</td>
+        <td>
+            <input type="file" name="Uploaded File"/>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" name="Submit" value="Submit"/>
+        </td>
+    </tr>
+</table>
+}
+

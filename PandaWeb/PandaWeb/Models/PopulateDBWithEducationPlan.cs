@@ -13,21 +13,13 @@ namespace PandaWeb.Models
         MyDBContext context = new MyDBContext();
         public PopulateDBWithEducationPlan()
         {
-            //CreateBackendutveckling();
-            //CreateSystemutveckling();
+            CreateBackendutveckling();
+            CreateSystemutveckling();
             CreateCourseOne();
         }
         public void CreateBackendutveckling()
         {
-            var backend = (from e in context.EducationPlans
-                           where e.Name == "Backendutveckling"
-                           select e.Name).ToString();
-            if (backend == "Backendutveckling")
-            {
-
-            }
-            else
-            {
+         
                 var eduPlan = new EducationPlan();
                 eduPlan.Name = "Backendutveckling";
                 eduPlan.EducationId = 2;
@@ -36,7 +28,6 @@ namespace PandaWeb.Models
                 eduPlan.EndDate = new DateTime(2016, 12, 30);
                 context.EducationPlans.Add(eduPlan);
                 context.SaveChanges();
-            }
         }
 
         public void CreateSystemutveckling()

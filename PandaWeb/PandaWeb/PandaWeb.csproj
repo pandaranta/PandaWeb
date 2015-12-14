@@ -41,6 +41,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -160,6 +161,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Documents.cs" />
     <Compile Include="Models\EducationPlan.cs" />
     <Compile Include="Models\MyDBContext.cs" />
     <Compile Include="Models\Person.cs" />
@@ -176,6 +178,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\CustomFile.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -205,6 +208,8 @@
     <Content Include="Views\Education\Course.cshtml" />
     <Content Include="Views\Education\Backendutveckling.cshtml" />
     <Content Include="Views\Education\Systemutveckling.cshtml" />
+    <Content Include="Views\Education\UploadDocuments.cshtml" />
+    <Content Include="Views\Education\ShowDocuments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
