@@ -20,7 +20,7 @@ namespace PandaWeb.Controllers
         {
             MyDBContext context = new MyDBContext();
             var all = (from e in context.EducationPlans select e);
-            return View(Mapper.Map<ICollection<IndexVM>>(all));
+            return PartialView(Mapper.Map<ICollection<IndexVM>>(all));
         }
 
         public ActionResult About()

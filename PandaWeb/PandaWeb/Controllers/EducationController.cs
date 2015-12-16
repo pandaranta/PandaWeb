@@ -43,7 +43,7 @@ namespace PandaWeb.Controllers
 
         public ActionResult CourseDetails(int id)
         {
-            return View(repository.GetCoursesDetailsViewModel(id));
+            return PartialView(repository.GetCoursesDetailsViewModel(id));
         }
 
         public ActionResult EduCourse()

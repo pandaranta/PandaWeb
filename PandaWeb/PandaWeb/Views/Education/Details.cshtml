@@ -6,41 +6,15 @@
 }
 
 <h2>Välkommen till @Html.DisplayFor(model => model.Name)</h2>
-
-<div>
-
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-
-    </dl>
+<h3>Meddelande om den här utbildningen</h3>
+<hr />
+<br />
+<br />
+<div name="info">
+    <p>
+        Den här utbildningen startar @Html.DisplayFor(model => model.StartDate) och avslutas @Html.DisplayFor(model => model.EndDate)
+      <br />  Kurser i det här programmet:
+        @Html.Action("CourseDetails")  </p>
 </div>
-
-<p>
-    Kurser i det här programmet:
-    @Html.Action("CourseDetails")
-</p>
 
 
