@@ -15,14 +15,7 @@ namespace PandaWeb.Controllers
         {
             return View();
         }
-        //originalkod
-        //public ActionResult Index()
-        //{
-        //    MyDBContext context = new MyDBContext();
-        //    var all = (from e in context.EducationPlans select e);
-        //    return View(all);
-        //}
-
+        
         public ActionResult Edu()
         {
             MyDBContext context = new MyDBContext();

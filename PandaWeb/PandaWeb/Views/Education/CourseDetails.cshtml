@@ -1,16 +1,19 @@
-﻿@model PandaWeb.ViewModels.EduPlanDetailsVM
+﻿@model PandaWeb.ViewModels.IndexVM
 
 @{
-    ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/_LayoutEducation.cshtml";
+    ViewBag.Title = "";
+
 }
-
-<h2>Välkommen till @Html.DisplayFor(model => model.Name)</h2>
-
 <div>
+   <dl >
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationId)
+        </dt>
 
-    <hr />
-    <dl class="dl-horizontal">
+        <dd>
+            @Html.DisplayFor(model => model.EducationId)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -37,10 +40,3 @@
 
     </dl>
 </div>
-
-<p>
-    Kurser i det här programmet:
-    @Html.Action("CourseDetails")
-</p>
-
-

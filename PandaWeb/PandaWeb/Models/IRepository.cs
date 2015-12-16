@@ -11,5 +11,6 @@ namespace PandaWeb.Models
     {
          ICollection<IndexVM> GetIndexViewModel();
          EduPlanDetailsVM GetEduPlansDetailsViewModel(int id);
+        IndexVM GetCoursesDetailsViewModel(int id);
     }
 }

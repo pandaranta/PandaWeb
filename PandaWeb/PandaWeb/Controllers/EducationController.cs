@@ -41,17 +41,14 @@ namespace PandaWeb.Controllers
             return View(repository.GetEduPlansDetailsViewModel(id));
         }
 
+        public ActionResult CourseDetails(int id)
+        {
+            return View(repository.GetCoursesDetailsViewModel(id));
+        }
+
         public ActionResult EduCourse()
         {
             return View();
-        }
-
-        public ActionResult Course(int? input)
-        {
-            var cour = (from c in context.Course
-                        where c.EducationPlanId == input
-                        select c);
-            return View(cour);
         }
     }
 }
