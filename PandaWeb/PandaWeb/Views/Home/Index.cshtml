@@ -9,8 +9,19 @@
 </div>
 
 <div class="row">
+ 
+        <h2>Getting started</h2>
         <p>
            Lista över Utbildningar
-              @Html.Partial("~/Views/Home/PartialIndex.cshtml")
+            <ul>
+              <li>
+                  @Html.ActionLink("Backendutveckling", "Backendutveckling", "Education") 
+              </li>
+                <li>
+                @Html.ActionLink("Systemutveckling", "Systemutveckling", "Education")
+
+                </li>
+                
+            </ul>
         </p>
 </div>
