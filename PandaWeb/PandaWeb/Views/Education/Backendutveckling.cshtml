@@ -54,7 +54,7 @@
     </tr>
 }
 
-   
+  
 
 </table>
 <h2>
@@ -65,11 +65,6 @@
 </p>
 
 <div class="education">
-
- @*@Html.Partial("ShowDocuments")*@
+    Här visas alla kurser
+    @Html.Action("Course", "Education")
 </div>
-
-@*@Html.ActionLink("Ladda upp dokument", "UploadDocuments", "Education")*@
-
-@*//visa partial view*@
-@*@Html.Partial("~/Views/Education/ShowDocuments.cshtml")*@

@@ -19,6 +19,7 @@ namespace PandaWeb
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             //Database.SetInitializer(new DropCreateDatabaseAlways<MyDBContext>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<CalendarContext>());
         }
     }
 }

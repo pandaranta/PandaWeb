@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
+using PandaWeb.ViewModels;
 
 namespace PandaWeb.Controllers
 {
@@ -33,28 +34,13 @@ namespace PandaWeb.Controllers
             return View();
         }
 
-        //public ActionResult Backendutveckling()
-        //{
-        //    //var output = (from e in context.EducationPlans
-        //    //              where e.Name == "Backendutveckling"
-        //    //              select e);
-        //    //var doc = (from e in context.Documents
-        //    //           select e).ToString();
-
-        //    EduPlanWithCoursesViewModel vmodel = new EduPlanWithCoursesViewModel();
-
-        //    return View(vmodel);
-        //}
-        public ActionResult GetEdu()
+        public ActionResult Backendutveckling()
         {
-            EduCourseViewModel viewModel = new EduCourseViewModel();
-            return View(viewModel);
-        }
 
-
-        public ActionResult UploadDocuments()
-        {
-            return View();
+            var output = (from e in context.EducationPlans
+                          where e.Name == "Backendutveckling"
+                          select e);
+            return View(output);
         }
 
         public ActionResult Systemutveckling()
@@ -65,56 +51,11 @@ namespace PandaWeb.Controllers
             return View(systemutveckling);
         }
 
-        public ActionResult Course()
+        //visar alla kurser som tillhör Backendutveckling i listformat
+         public ActionResult Course()
         {
-            Course course = new Course();
-            context.Course.Add(course);
-            return View();
-        }
-
-        public ActionResult Save(FormCollection formCollection)
-        {
-            if(Request!=null)
-            {
-                HttpPostedFileBase file = Request.Files["Uploaded File"];
-                if((file!=null) && (file.ContentLength>0) && !string.IsNullOrEmpty(file.FileName))
-                {
-                    //string fileName = file.FileName;
-                    //string fileContentType = file.ContentType;
-                    byte[] fileBytes = new byte[file.ContentLength];
-                    file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
-
-                    //string fileNames = Path.GetFileName(Request.Files["file"].FileName);
-                    Documents doc = new Documents();
-                    doc.Document = fileBytes;
-                    doc.DocType = file.ContentType;
-
-                    doc.FileName = file.FileName;
-                    context.Documents.Add(doc);
-                    context.SaveChanges();
-                   
-                    //http://scottlilly.com/how-to-upload-a-file-in-an-asp-net-mvc-4-page/
-
-                }
-            }
-            return RedirectToAction("Backendutveckling");
-        }
-
-        public PartialViewResult ShowDocuments()
-        {
-            //ska anpassas för att endast visa dokument för den som är inloggad
-            var doc = (from e in context.Documents
-                       select e);
-            return PartialView(doc);
-        }
-
-        public ActionResult DownloadFile(int id)
-        {
-            var doc = (from e in context.Documents where e.Id==id select e.Document);
-            //var docu = (context.Documents.Where(p => p.Id == id).Select(p => p));
-            var docu = context.Documents.Single(p => p.Id == id);
-            //var docu2 = context.Documents.Where(p => p.Id == id).Select(p => p.DocType).ToString();
-            return File(docu.Document, docu.DocType);
+            var cour = context.Course.Where(c => c.EducationPlanId == 2).Select(c=>c);   
+            return View(cour);
         }
     }
 }

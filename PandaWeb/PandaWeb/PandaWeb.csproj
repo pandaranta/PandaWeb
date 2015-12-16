@@ -125,6 +125,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -135,11 +136,11 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Documents.cs" />
     <Compile Include="Models\EducationPlan.cs" />
-    <Compile Include="ViewModels\EduCourseViewModel.cs" />
     <Compile Include="Models\MyDBContext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PopulateDBWithEducationPlan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CourseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -361,13 +362,13 @@
     <Content Include="Views\Education\LG.cshtml" />
     <Content Include="Views\Shared\_LayoutEducation.cshtml" />
     <Content Include="Views\Education\UPSystemutveckling.cshtml" />
-    <Content Include="Views\Education\Course.cshtml" />
     <Content Include="Views\Education\Backendutveckling.cshtml" />
     <Content Include="Views\Education\Systemutveckling.cshtml" />
-    <Content Include="Views\Education\UploadDocuments.cshtml" />
+    <Content Include="Views\Document\UploadDocuments.cshtml" />
     <Content Include="Views\Home\PartialIndex.cshtml" />
-    <Content Include="Views\Education\ShowDocuments.cshtml" />
+    <Content Include="Views\Document\ShowDocuments.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />
+    <Content Include="Views\Education\Course.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
