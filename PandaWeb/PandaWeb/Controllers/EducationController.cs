@@ -21,8 +21,8 @@ namespace PandaWeb.Controllers
         //PopulateDBWithEducationPlan fillDB = new PopulateDBWithEducationPlan();
         //I mappen Global.asax.cs kommentera bort Database.SetInitializer
 
-        // GET: Education
-        public ActionResult UP()
+        // GET: UP
+        public ActionResult UPSystemutveckling()
         {
             return View();
         }
@@ -33,13 +33,24 @@ namespace PandaWeb.Controllers
             return View();
         }
 
-        public ActionResult Backendutveckling()
-        {      
-            var backendutveckling = from e in context.EducationPlans
-                         where e.Name=="Backendutveckling"
-                         select e;
-            return View(backendutveckling);
+        //public ActionResult Backendutveckling()
+        //{
+        //    //var output = (from e in context.EducationPlans
+        //    //              where e.Name == "Backendutveckling"
+        //    //              select e);
+        //    //var doc = (from e in context.Documents
+        //    //           select e).ToString();
+
+        //    EduPlanWithCoursesViewModel vmodel = new EduPlanWithCoursesViewModel();
+
+        //    return View(vmodel);
+        //}
+        public ActionResult GetEdu()
+        {
+            EduCourseViewModel viewModel = new EduCourseViewModel();
+            return View(viewModel);
         }
+
 
         public ActionResult UploadDocuments()
         {
@@ -61,7 +72,6 @@ namespace PandaWeb.Controllers
             return View();
         }
 
-        //Den här metoden är inte klar, eftersom den aldrig sparar något i databasen
         public ActionResult Save(FormCollection formCollection)
         {
             if(Request!=null)
@@ -90,12 +100,12 @@ namespace PandaWeb.Controllers
             return RedirectToAction("Backendutveckling");
         }
 
-        public ActionResult ShowDocuments()
+        public PartialViewResult ShowDocuments()
         {
             //ska anpassas för att endast visa dokument för den som är inloggad
             var doc = (from e in context.Documents
                        select e);
-            return View(doc);
+            return PartialView(doc);
         }
 
         public ActionResult DownloadFile(int id)

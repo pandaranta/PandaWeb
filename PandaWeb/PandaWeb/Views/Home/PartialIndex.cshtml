@@ -1,15 +1,6 @@
 ﻿@model IEnumerable<PandaWeb.Models.EducationPlan>
 
-@{
-    ViewBag.Title = "Systemutveckling";
-    Layout = "~/Views/Shared/_LayoutEducation.cshtml";
-}
 
-<h2>Systemutveckling</h2>
-
-<p>
-  
-</p>
 <table class="table">
     <tr>
         <th>
@@ -48,19 +39,10 @@
             @Html.DisplayFor(modelItem => item.FormOfStudy)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EducationId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EducationId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EducationId })
+            @Html.ActionLink("UP", "Edit", new { id=item.EducationId }) |
+            @Html.ActionLink("Kurser", "Details", new { id=item.EducationId }) |
         </td>
     </tr>
 }
 
 </table>
-<h2>
-    Välkommen till denna utbildning!
-</h2>
-<p>
-    Meddelande om denna utbildning
-</p>
-
-@Html.ActionLink("Klicka här för att komma till UP", "UPSystemutveckling", "Education")

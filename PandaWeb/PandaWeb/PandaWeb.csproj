@@ -163,6 +163,7 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Documents.cs" />
     <Compile Include="Models\EducationPlan.cs" />
+    <Compile Include="ViewModels\EduCourseViewModel.cs" />
     <Compile Include="Models\MyDBContext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PopulateDBWithEducationPlan.cs" />
@@ -204,11 +205,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Education\LG.cshtml" />
     <Content Include="Views\Shared\_LayoutEducation.cshtml" />
-    <Content Include="Views\Education\UP.cshtml" />
+    <Content Include="Views\Education\UPSystemutveckling.cshtml" />
     <Content Include="Views\Education\Course.cshtml" />
     <Content Include="Views\Education\Backendutveckling.cshtml" />
     <Content Include="Views\Education\Systemutveckling.cshtml" />
     <Content Include="Views\Education\UploadDocuments.cshtml" />
+    <Content Include="Views\Home\PartialIndex.cshtml" />
     <Content Include="Views\Education\ShowDocuments.cshtml" />
   </ItemGroup>
   <ItemGroup>

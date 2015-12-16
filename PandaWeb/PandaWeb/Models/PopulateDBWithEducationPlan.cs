@@ -8,8 +8,6 @@ namespace PandaWeb.Models
 {
     public class PopulateDBWithEducationPlan
     {
-        
-
         MyDBContext context = new MyDBContext();
         public PopulateDBWithEducationPlan()
         {
@@ -46,7 +44,6 @@ namespace PandaWeb.Models
 
         public void CreateCourseOne()
         {
-            //Database.SetInitializer(new DropCreateDatabaseAlways<MyDBContext>());
             Course course = new Course();
             course.Name = "OO1";
             course.EducationPlanId = 2;
