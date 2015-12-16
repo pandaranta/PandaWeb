@@ -32,14 +32,25 @@ namespace PandaWeb.Models
             }
         }
 
-        IndexVM IRepository.GetCoursesDetailsViewModel(int id)
+        ICollection<IndexVM> IRepository.GetCoursesDetailsViewModel(int id)
         {
             using (var db = new MyDBContext())
             {
-                var vm = db.Course.SingleOrDefault(cp => cp.EducationPlanId == id);
-                var mm = Mapper.Map<IndexVM>(vm);
+                var vm = db.Course.Where(cp=>cp.EducationPlanId== id).Select(cp=>cp);
+                var mm = Mapper.Map<ICollection<IndexVM>>(vm);
                 return mm;
             }
         }
+
+
+        //IndexVM IRepository.GetCoursesDetailsViewModel(int id)
+        //{
+        //    using (var db = new MyDBContext())
+        //    {
+        //        var vm = db.Course.SingleOrDefault(cp => cp.EducationPlanId == id);
+        //        var mm = Mapper.Map<IndexVM>(vm);
+        //        return mm;
+        //    }
+        //}
     }
 }

@@ -9,8 +9,8 @@ namespace PandaWeb.Models
 {
     interface IRepository
     {
-         ICollection<IndexVM> GetIndexViewModel();
-         EduPlanDetailsVM GetEduPlansDetailsViewModel(int id);
-        IndexVM GetCoursesDetailsViewModel(int id);
+        ICollection<IndexVM> GetIndexViewModel();
+        EduPlanDetailsVM GetEduPlansDetailsViewModel(int id);
+        ICollection<IndexVM> GetCoursesDetailsViewModel(int id);
     }
 }

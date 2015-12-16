@@ -38,7 +38,7 @@ namespace PandaWeb.Controllers
 
         public ActionResult Details(int id)
         {    
-            return View(repository.GetEduPlansDetailsViewModel(id));
+            return PartialView(repository.GetEduPlansDetailsViewModel(id));
         }
 
         public ActionResult CourseDetails(int id)
@@ -46,9 +46,10 @@ namespace PandaWeb.Controllers
             return PartialView(repository.GetCoursesDetailsViewModel(id));
         }
 
-        public ActionResult EduCourse()
-        {
-            return View();
-        }
+
+        //public ActionResult EduCourse()
+        //{
+        //    return View();
+        //}
     }
 }
