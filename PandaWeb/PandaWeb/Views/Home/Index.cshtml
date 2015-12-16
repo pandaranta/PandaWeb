@@ -8,7 +8,8 @@
     <p></p>
 </div>
 
-<div class="row">
+@Html.Action("Edu")
+@*<div class="row">
  
         <h2>Getting started</h2>
         <p>
@@ -19,12 +20,10 @@
               </li>
                 <li>
                 @Html.ActionLink("Systemutveckling", "Systemutveckling", "Education")
-
-                </li>
-                
+                </li>               
             </ul>
         </p>
-</div>
+</div>*@
 
 <div class="row">
     <input type="button" title="UploadDocuments" value="Ladda upp dokument" onclick="location.href='@Url.Action("Uploaddocuments", "Document")'"/>

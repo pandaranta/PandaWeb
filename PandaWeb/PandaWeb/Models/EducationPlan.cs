@@ -25,6 +25,6 @@ namespace PandaWeb.Models
         public virtual UL UL { get; set; }
 
         //länktabell till kurser
-        public virtual ICollection<Course> Courses { get; set; }
+        public ICollection<Course> Courses { get; set; }
     }
 }

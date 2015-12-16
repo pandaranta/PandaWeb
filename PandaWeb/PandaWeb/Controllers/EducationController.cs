@@ -8,6 +8,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using PandaWeb.ViewModels;
+using AutoMapper;
 
 namespace PandaWeb.Controllers
 {
@@ -33,28 +34,23 @@ namespace PandaWeb.Controllers
             //ActionResult för LG-Information
             return View();
         }
+        IRepository repository = new MyDBContextRepository();
 
-        public ActionResult Backendutveckling()
-        {
-
-            var output = (from e in context.EducationPlans
-                          where e.Name == "Backendutveckling"
-                          select e);
-            return View(output);
+        public ActionResult Details(int id)
+        {    
+            return View(repository.GetEduPlansDetailsViewModel(id));
         }
 
-        public ActionResult Systemutveckling()
-        {       
-            var systemutveckling  = from e in context.EducationPlans
-                       where e.Name=="Systemutveckling"
-                       select e;
-            return View(systemutveckling);
+        public ActionResult EduCourse()
+        {
+            return View();
         }
 
-        //visar alla kurser som tillhör Backendutveckling i listformat
-         public ActionResult Course()
+        public ActionResult Course(int? input)
         {
-            var cour = context.Course.Where(c => c.EducationPlanId == 2).Select(c=>c);   
+            var cour = (from c in context.Course
+                        where c.EducationPlanId == input
+                        select c);
             return View(cour);
         }
     }

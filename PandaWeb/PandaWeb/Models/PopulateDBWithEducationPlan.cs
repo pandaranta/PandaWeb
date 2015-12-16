@@ -16,11 +16,9 @@ namespace PandaWeb.Models
             CreateCourseOne();
         }
         public void CreateBackendutveckling()
-        {
-         
+        { 
                 var eduPlan = new EducationPlan();
                 eduPlan.Name = "Backendutveckling";
-                eduPlan.EducationId = 2;
                 eduPlan.StartDate =
                     new DateTime(2015, 01, 01);
                 eduPlan.EndDate = new DateTime(2016, 12, 30);
@@ -32,7 +30,6 @@ namespace PandaWeb.Models
         {
             var eduPlan = new EducationPlan();
             eduPlan.Name = "Systemutveckling";
-            eduPlan.EducationId = 3;
             eduPlan.StartDate =
                 new DateTime(2015, 01, 01);
             eduPlan.EndDate = new DateTime(2016, 12, 30);
@@ -46,6 +43,10 @@ namespace PandaWeb.Models
         {
             Course course = new Course();
             course.Name = "OO1";
+            course.EducationPlanId = 2;
+
+            Course course2 = new Course();
+            course.Name = "OO2";
             course.EducationPlanId = 2;
 
             context.Course.Add(course);

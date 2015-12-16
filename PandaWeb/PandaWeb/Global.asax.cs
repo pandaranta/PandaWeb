@@ -1,4 +1,6 @@
-﻿using PandaWeb.Models;
+﻿using AutoMapper;
+using PandaWeb.Models;
+using PandaWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,7 +21,10 @@ namespace PandaWeb
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             //Database.SetInitializer(new DropCreateDatabaseAlways<MyDBContext>());
-            Database.SetInitializer(new DropCreateDatabaseAlways<CalendarContext>());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<CalendarContext>());
+
+            Mapper.CreateMap<EducationPlan, IndexVM>();
+            Mapper.CreateMap<EducationPlan, EduPlanDetailsVM>();
         }
     }
 }

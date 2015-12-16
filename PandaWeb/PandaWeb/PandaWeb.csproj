@@ -40,6 +40,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DHTMLX, Version=3.3.5821.24914, Culture=neutral, PublicKeyToken=53f24791214eb8ac, processorArchitecture=MSIL">
       <HintPath>..\packages\DHTMLX.Scheduler.NET.3.3.12.2\lib\DHTMLX.dll</HintPath>
       <Private>True</Private>
@@ -136,11 +140,14 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Documents.cs" />
     <Compile Include="Models\EducationPlan.cs" />
+    <Compile Include="Models\IRepository.cs" />
     <Compile Include="Models\MyDBContext.cs" />
+    <Compile Include="Models\MyDBContextRepository.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PopulateDBWithEducationPlan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\IndexVM.cs" />
+    <Compile Include="ViewModels\EduPlanDetailsVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -366,9 +373,11 @@
     <Content Include="Views\Education\Systemutveckling.cshtml" />
     <Content Include="Views\Document\UploadDocuments.cshtml" />
     <Content Include="Views\Home\PartialIndex.cshtml" />
-    <Content Include="Views\Document\ShowDocuments.cshtml" />
+    <Content Include="Views\Shared\ShowDocuments.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />
     <Content Include="Views\Education\Course.cshtml" />
+    <Content Include="Views\Home\Edu.cshtml" />
+    <Content Include="Views\Education\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

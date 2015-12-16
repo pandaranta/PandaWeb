@@ -18,6 +18,11 @@ namespace PandaWeb
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Education",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Education", action = "Backendutveckling", id = "" });
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using PandaWeb.Models;
+﻿using AutoMapper;
+using PandaWeb.Models;
+using PandaWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +13,21 @@ namespace PandaWeb.Controllers
     {
         public ActionResult Index()
         {
+            return View();
+        }
+        //originalkod
+        //public ActionResult Index()
+        //{
+        //    MyDBContext context = new MyDBContext();
+        //    var all = (from e in context.EducationPlans select e);
+        //    return View(all);
+        //}
+
+        public ActionResult Edu()
+        {
             MyDBContext context = new MyDBContext();
             var all = (from e in context.EducationPlans select e);
-            return View(all);
+            return View(Mapper.Map<ICollection<IndexVM>>(all));
         }
 
         public ActionResult About()

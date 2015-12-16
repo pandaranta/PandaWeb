@@ -17,7 +17,6 @@ namespace PandaWeb.Models
 
         [Required]
         public string Name { get; set; }
-
        
         public int EducationPlanId { get; set; }
 
@@ -32,6 +31,6 @@ namespace PandaWeb.Models
         public string TeacherId { get; set; }
 
         //länktabell till utbildning 
-        public virtual EducationPlan EducationPlan { get; set; }
+        public EducationPlan EducationPlan { get; set; }
     }
 }
