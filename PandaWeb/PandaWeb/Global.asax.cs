@@ -26,6 +26,7 @@ namespace PandaWeb
             Mapper.CreateMap<EducationPlan, IndexVM>();
             Mapper.CreateMap<EducationPlan, EduPlanDetailsVM>();
             Mapper.CreateMap<Course, IndexVM>();
+            Mapper.CreateMap<Course, Documents>();
         }
     }
 }

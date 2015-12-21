@@ -32,5 +32,8 @@ namespace PandaWeb.Models
 
         //länktabell till utbildning 
         public EducationPlan EducationPlan { get; set; }
+
+        //länk till dokument
+        public ICollection<Documents> Documents { get; set; }
     }
 }

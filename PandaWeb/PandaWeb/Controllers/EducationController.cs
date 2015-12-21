@@ -31,6 +31,7 @@ namespace PandaWeb.Controllers
 
         public ActionResult LG()
         {
+            //testar
             //ActionResult för LG-Information
             return View();
         }
@@ -46,10 +47,9 @@ namespace PandaWeb.Controllers
             return PartialView(repository.GetCoursesDetailsViewModel(id));
         }
 
-
-        //public ActionResult EduCourse()
-        //{
-        //    return View();
-        //}
+        public ActionResult OneCourseDetails(int id)
+        {
+            return PartialView(repository.GetCourse(id));
+        }
     }
 }

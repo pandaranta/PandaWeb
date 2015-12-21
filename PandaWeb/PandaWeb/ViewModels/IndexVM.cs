@@ -8,7 +8,8 @@ using System.Web;
 namespace PandaWeb.ViewModels
 {
     public class IndexVM
-    {    
+    {
+        public int Id { get; set; }
         public int EducationId { get; set; }
         public string Name { get; set; }
 

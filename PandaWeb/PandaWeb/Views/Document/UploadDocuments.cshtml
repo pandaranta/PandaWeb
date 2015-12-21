@@ -1,4 +1,4 @@
-﻿
+﻿@model PandaWeb.Models.Course
 @{
     ViewBag.Title = "UploadDocuments";
     Layout = "~/Views/Shared/_LayoutEducation.cshtml";
@@ -7,7 +7,7 @@
 <h2>Kursmaterial</h2>
 <p>Här kan du ladda upp material</p>
 
-@Html.BeginForm("Save", "Document", FormMethod.Post, new { enctype ="multipart/form-data"})
-            <input type="file" name="Uploaded File"/>
+@Html.BeginForm("Save", "Document", new {id=Model.Id}, FormMethod.Post, new { enctype ="multipart/form-data"})
+            <input type="file" name="Uploaded File" />
             <input type="submit" name="Submit" value="Submit" />
 

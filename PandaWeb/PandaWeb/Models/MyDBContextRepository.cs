@@ -42,6 +42,34 @@ namespace PandaWeb.Models
             }
         }
 
+         Course IRepository.GetCourse(int id)
+        {
+            using (var db = new MyDBContext())
+            {
+                return db.Course.SingleOrDefault(c => c.Id == id);
+            }
+        }
+
+       Course IRepository.GetDocuments(int id)
+        {
+            using (var db = new MyDBContext())
+            {
+                var dmodel = db.Course.Where(d => d.Id == id).First();
+                //var dmodel = db.Course.Where(d => d.Name == name).First();
+                return dmodel;
+            }
+        }
+
+        //ICollection<Documents> IRepository.GetDocuments(int id)
+        //{
+        //    using (var db = new MyDBContext())
+        //    {
+        //        var dmodel = db.Documents.Where(d => d.CourseId == id).Select(d => d);
+        //        var cd = Mapper.Map<ICollection<Documents>>(dmodel);
+        //        return cd;
+        //    }
+        //}
+
 
         //IndexVM IRepository.GetCoursesDetailsViewModel(int id)
         //{

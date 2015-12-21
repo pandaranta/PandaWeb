@@ -31,6 +31,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
+                <td>
+                    @Html.ActionLink("Detaljer", "OneCourseDetails", "Education", new { id = item.Id }, null)
+                </td>
             </tr>
         }
         </table>

@@ -4,18 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 
 namespace PandaWeb.Controllers
 {
     public class DocumentController : Controller
     {
+        IRepository repository = new MyDBContextRepository();
         MyDBContext context = new MyDBContext();
-        public ActionResult UploadDocuments()
+        public ActionResult UploadDocuments(int id)
         {
-            return View();
+            //testar
+            
+            return PartialView(repository.GetDocuments(id));
         }
 
-        public ActionResult Save(FormCollection formCollection)
+        public ActionResult Save(FormCollection formCollection, int id=0)
         {
             if (Request != null)
             {
@@ -26,13 +30,13 @@ namespace PandaWeb.Controllers
                     //string fileContentType = file.ContentType;
                     byte[] fileBytes = new byte[file.ContentLength];
                     file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
-
+                    
                     //string fileNames = Path.GetFileName(Request.Files["file"].FileName);
                     Documents doc = new Documents();
                     doc.Document = fileBytes;
                     doc.DocType = file.ContentType;
-
                     doc.FileName = file.FileName;
+                    doc.CourseId = id;
                     context.Documents.Add(doc);
                     context.SaveChanges();
 

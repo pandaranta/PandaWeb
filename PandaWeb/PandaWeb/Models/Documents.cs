@@ -15,5 +15,6 @@ namespace PandaWeb.Models
         public byte[] Document { get; set; }
         public string DocType { get; set; }
         public string FileName { get; set; }
+        public int CourseId { get; set; }
     }
 }

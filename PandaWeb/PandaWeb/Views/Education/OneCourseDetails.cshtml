@@ -1,0 +1,68 @@
+﻿@model PandaWeb.Models.Course
+
+@{ 
+    Layout = "~/Views/Shared/_LayoutEducation.cshtml";
+}
+
+<div>
+    <br />
+
+    <h4>Kurs @Html.DisplayFor(model=>model.Name)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationPlanId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationPlanId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoursePlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoursePlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EarlierMaterial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EarlierMaterial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherMaterial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherMaterial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeacherId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherId)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <p>Här kan du ladda upp dokument</p>
+    <input type="button" title="UploadDocuments" value="Ladda upp dokument" onclick="location.href='@Url.Action("Uploaddocuments", "Document", new {Model.Id })'" />
+    <input type="button" title="ShowDocuments" value="Se dokument" onclick="location.href='@Url.Action("Showdocuments", "Document")'" />
+</div>
+
